@@ -1,4 +1,4 @@
-package com.example;
+package hsj.external.slayerhelper;
 
 import com.google.inject.Provides;
 import javax.inject.Inject;
@@ -14,15 +14,17 @@ import net.runelite.client.plugins.PluginDescriptor;
 
 @Slf4j
 @PluginDescriptor(
-	name = "Example"
+	name = "Slayer Helper",
+	description = "Point boosting & Slayer skipping helper",
+	tags = {"combat", "slayer", "helper", "turael", "aya", "mazchna", "krystilia", "points"}
 )
-public class ExamplePlugin extends Plugin
+public class SlayerHelperPlugin extends Plugin
 {
 	@Inject
 	private Client client;
 
 	@Inject
-	private ExampleConfig config;
+	private SlayerHelperConfig config;
 
 	@Override
 	protected void startUp() throws Exception
@@ -46,8 +48,8 @@ public class ExamplePlugin extends Plugin
 	}
 
 	@Provides
-	ExampleConfig provideConfig(ConfigManager configManager)
+	SlayerHelperConfig provideConfig(ConfigManager configManager)
 	{
-		return configManager.getConfig(ExampleConfig.class);
+		return configManager.getConfig(SlayerHelperConfig.class);
 	}
 }
